@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
+	<meta property="og:title" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
+	<meta property="og:description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
+	<meta property="og:image" content="https://fillow.dexignlab.com/xhtml/social-image.png">
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>Vybe</title>
+	
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<script type="application/javascript" src="https://connect.withmono.com/connect.js"></script>
+    <!-- Datatable -->
+    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+   <!-- <div id="preloader">
+		<div class="lds-ripple">
+			<div></div>
+			<div></div>
+		</div>
+    </div> -->
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+		<div class="nav-header">
+            <a href="/dashboard" class="brand-logo">
+				<div class="brand-title">
+					<h2 class="">Vybe.</h2>
+					<span class="brand-sub-title">Vybe Admin Dashboard</span>
+				</div>
+            </a>
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div> 
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+
+
+  <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="dashboard_bar">
+                                Vybe
+                            </div>							
+                        </div>
+                        <ul class="navbar-nav header-right">
+							<li class="nav-item d-flex align-items-center">
+								<div class="input-group search-area">
+									<input type="text" class="form-control" placeholder="Search here...">
+									<span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
+								</div>
+							</li>
+
+							<li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell-link "  id="add-account">
+									<i class="fas fa-plus-square"></i>	
+                                </a>
+							</li>		
+                        </ul>
+                    </div>
+				</nav>
+			</div>
+		</div>
+                    
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="dlabnav">
+            <div class="dlabnav-scroll">
+				<ul class="metismenu" id="menu">
+                    <li><a  href="/dashboard" aria-expanded="false">							
+							<i class="fas fa-home"></i><span class="nav-text">Dashboard</span>																					
+						</a>
+                    </li>
+					
+                  
+                    <li>
+						<a  href="budget.html" aria-expanded="false">
+							<i class="far fa-credit-card"></i>
+							<span class="nav-text">Budget</span>
+						</a>
+                    </li>
+					<li>
+						<a  href="transaction.html" aria-expanded="false">
+							<i class="fas fa-exchange-alt"></i>
+							<span class="nav-text">Transactions</span>
+						</a>
+                    </li>				
+                </ul>
+
+			</div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+		<div class="content-body">
+            <div class="container-fluid">
+				<div class="row">
+					<div class="col-xl-6">
+                        <div class="card text-center">
+                             <div class="card-header">
+                                <h4 class="card-title">Withdrawals</h4>
+                            </div>
+                            <div class="card-body">
+								<ul>
+									<li class="card-text" style="font-size:xx-large;"><b>0.00N</b></li>
+									<li class="card-text" style=" display: inline; padding-right: 50px;">+5.12% Since Last Month</li>
+									<i class="fas fa-bell"></i>
+								</ul>
+							</div>
+                           
+                        </div>
+                    </div>
+
+					<div class="col-xl-6">
+                        <div class="card text-center">
+                             <div class="card-header">
+                                <h4 class="card-title">Earnings</h4>
+                            </div>
+                            <div class="card-body">
+								<ul>
+									<li class="card-text" style="font-size:xx-large;"><b>0.00N</b></li>
+									<li class="card-text" style=" display: inline; padding-right: 50px;">+5.12% Since Last Month</li>
+									<i class="fas fa-bell"></i>
+								</ul>
+							</div>
+						</div>
+                    </div>
+
+				</div>
+
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Transactions</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="example2" class="display" style="width:100%">
+
+                                    <thead>
+                                        <tr>
+                                            <th>ROLL NUMBER</th>
+                                            <th>CURRENCY</th>
+                                            <th>AMOUNT</th>
+                                            <th>PAYMENT TYPE</th>
+                                            <th>BALANCE</th>
+                                            <th>TIME</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i=0; i < transactions.data.length; i++) {%>
+                                        <tr>
+                                            <td><%= i+1 %></td>
+                                            <td>GHS</td>
+                                            <td>NGN <%= transactions.data[i].amount %></td>
+                                            <td><%= (transactions.data[i].type).toUpperCase() %></td>
+                                            <td><%= transactions.data[i].balance %></td>
+                                            <td><%= transactions.data[i].date %></td>
+                                        </tr>
+                                        <% } %>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>ROLL NUMBER</th>
+                                            <th>CURRENCY</th>
+                                            <th>AMOUNT</th>
+                                            <th>PAYMENT TYPE</th>
+                                            <th>BALANCE</th>
+                                            <th>TIME</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="js/custom.min.js"></script>
+	<script src="js/dlabnav-init.js"></script>
+	<script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+	<script type="application/javascript" src="js/Mono.js"></script>
+	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
+
+    <!-- Datatable -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+    
+
+<script type="application/javascript">
+  const data = JSON.parse('<%- JSON.stringify(data) %>');
+  const copyToClipboard = text => {
+    const elm = document.createElement('textarea');
+    elm.value = text;
+    document.body.appendChild(elm);
+    elm.select();
+    document.execCommand('copy');
+    document.body.removeChild(elm);
+  };
+
+  const reauthToken = "RANDOM_TOKEN_SENT_FROM_REAUTHORISE ENDPOINT";
+
+  
+  var connect;
+  var config = {
+    key: "test_pk_FvmsDmo8DP8Sbujy874g",
+    onSuccess: function (response) {
+      $.ajax({
+            type: "POST",
+            url: "/dashboard",  // post route name here
+            data: { code: response.code, id: data.user._id  },
+            success: function(data) {
+            },
+            error: function(jqXHR, textStatus, err) {
+                alert('text status '+textStatus+', err '+err)
+            }
+        });
+
+    },
+    onClose: function () {
+      console.log('user closed the widget.')
+    }
+  };
+  connect = new Connect(config);
+  connect.setup();
+  var launch = document.getElementById('add-account');
+  launch.onclick = function (e) {
+    connect.open();
+  };
+</script>
+
+</body>
+</html>

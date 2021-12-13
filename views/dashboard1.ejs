@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vybe</title>
+    <style>
+        .p-5 {
+            padding: 5em;
+        }
+    </style>
+    <script type="application/javascript" src="https://connect.withmono.com/connect.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+
+	
+<div className="p-5">
+    <p>Vybe Connect.</p>
+    <button id="launch-btn">Link a financial account</button>
+</div>
+
+
+<script type="application/javascript">
+  const data = JSON.parse('<%- JSON.stringify(data) %>');
+  const copyToClipboard = text => {
+    const elm = document.createElement('textarea');
+    elm.value = text;
+    document.body.appendChild(elm);
+    elm.select();
+    document.execCommand('copy');
+    document.body.removeChild(elm);
+  };
+
+  const reauthToken = "RANDOM_TOKEN_SENT_FROM_REAUTHORISE ENDPOINT";
+
+  
+  var connect;
+  var config = {
+    key: "test_pk_FvmsDmo8DP8Sbujy874g",
+    onSuccess: function (response) {
+      $.ajax({
+            type: "POST",
+            url: "/dashboard",  // post route name here
+            data: { code: response.code, id: data.user._id  },
+            success: function(data) {
+            },
+            error: function(jqXHR, textStatus, err) {
+                alert('text status '+textStatus+', err '+err)
+            }
+        });
+
+    },
+    onClose: function () {
+      console.log('user closed the widget.')
+    }
+  };
+  connect = new Connect(config);
+  connect.setup();
+  var launch = document.getElementById('launch-btn');
+  launch.onclick = function (e) {
+    connect.open();
+  };
+</script>
+</body>
+</html>
