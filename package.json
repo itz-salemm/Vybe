@@ -1,7 +1,6 @@
 {
   "name": "vybe",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +13,6 @@
     "cookie-parser": "^1.4.6",
     "mono-node": "^1.0.3",
     "validator": "^13.7.0"
-  }
+  },
+  "description": ""
 }
