@@ -9,6 +9,7 @@ const {checkUser, requireAuth, requireMonoReauthToken} = require('./middleware/a
 
 const app = express();
 
+ mongoose.set('useCreateIndex', true);
 const dbURI = 'mongodb+srv://Salem:Vybranium@test.oepe0.mongodb.net/Vybe?retryWrites=true&w=majority';
 
 mongoose.connect( dbURI,  { useNewUrlParser: true, useUnifiedTopology: true })
