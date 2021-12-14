@@ -33,7 +33,7 @@
     <% var debit = 0.00 %>
     <% var percentage_credit = 0 %>
     <% var percentage_debit = 0 %>
-
+    <% var performance = 0 %>
     <% if ( data['user']['monoId']) {%>
     <% for(var i=0; i < transactions.data.length; i++) {%>
     <% if (transactions.data[i].type == "debit") {%>
@@ -44,8 +44,10 @@
     <% } %>
     <% } %>
     <% var total = credit-debit %>
-    <% var percentage_credit = (credit/total)*100 %>
-    <% var percentage_debit = (debit/total)*100 %>
+    <% var total_performance = credit+debit %>
+    <% percentage_credit = (credit/total)*100 %>
+    <% percentage_debit = (debit/total)*100 %>
+    <% performance = (credit/total_performance)*100 %>
     <% }%>
 
     <!--*******************

@@ -30,6 +30,7 @@
 	<% var debit = 0.00 %>
 	<% var percentage_credit = 0 %>
 	<% var percentage_debit = 0 %>
+	<% var performance = 0 %>
 
 	<% if ( data['user']['monoId']) {%>
 	<% for(var i=0; i < transactions.data.length; i++) {%>
@@ -41,8 +42,10 @@
 	<% } %>
 	<% } %>
 	<% var total = credit-debit %>
-	<% var percentage_credit = (credit/total)*100 %>
-	<% var percentage_debit = (debit/total)*100 %>
+	<% var total_performance = credit+debit %>
+	<% percentage_credit = (credit/total)*100 %>
+	<% percentage_debit = (debit/total)*100 %>
+	<% performance = (credit/total_performance)*100 %>
 	<% }%>
 
     <!--*******************
@@ -338,7 +341,7 @@
 				<div class="row page-titles">
 					<div class="col-xl-12" >
 						<p style="font-size: large;"><b>Budget Overview</b></p>
-						<p style="font-size: 12pt;">You have withdrawn N0.00 this Month. Your budget performance is 0%</p>
+						<p style="font-size: 12pt;">You have withdrawn N<%= debit.toLocaleString() %> this Month. Your budget performance is <%= performance.toFixed(2) %>%</p>
 						<a href="#" style="float: right;">See Report</a>
 					</div>
 				</div>
