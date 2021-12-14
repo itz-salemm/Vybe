@@ -5,6 +5,30 @@ const controllers = require('./controllers/allController');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
 
+
+
+
+
+
+//ML Aspects with Brainjs
+const brain = require('brain.js');
+const data = require('./data.json');
+
+const network = new brain.recurrent.LSTM();
+
+const trainingData = data.map(item => ({
+input: item.text,
+output: item.percentage
+}));
+
+network.train(trainingData, {
+iterations: 2000
+});
+
+
+
+
+
 const {checkUser, requireAuth, requireMonoReauthToken} = require('./middleware/authMiddleware');
 
 const app = express();
@@ -34,7 +58,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/dashboard', requireAuth, requireMonoReauthToken, controllers.dashboard, controllers.alltransactions,  (req, res) => {
-	res.render('dashboard');
+	const output = network.run(transactions.data[i].balance);
+	res.render('dashboard',{resultdata:output);
 });
 
 app.post('/dashboard', controllers.dashboardPost);
