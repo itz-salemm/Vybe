@@ -29,6 +29,24 @@
 </head>
 
 <body>
+    <% var credit = 0.00 %>
+    <% var debit = 0.00 %>
+    <% var percentage_credit = 0 %>
+    <% var percentage_debit = 0 %>
+
+    <% if ( data['user']['monoId']) {%>
+    <% for(var i=0; i < transactions.data.length; i++) {%>
+    <% if (transactions.data[i].type == "debit") {%>
+    <% debit += transactions.data[i].amount %>
+    <% } %>
+    <% if (transactions.data[i].type == "credit") {%>
+    <% credit += transactions.data[i].amount %>
+    <% } %>
+    <% } %>
+    <% var total = credit-debit %>
+    <% var percentage_credit = (credit/total)*100 %>
+    <% var percentage_debit = (debit/total)*100 %>
+    <% }%>
 
     <!--*******************
         Preloader start
@@ -151,8 +169,8 @@
                             </div>
                             <div class="card-body">
 								<ul>
-									<li class="card-text" style="font-size:xx-large;"><b>30,000.73N</b></li>
-									<li class="card-text" style=" display: inline; padding-right: 50px;">+7.43% Since Last Month</li>
+									<li class="card-text" style="font-size:xx-large;"><b><%= debit.toLocaleString() %>N</b></li>
+									<li class="card-text" style=" display: inline; padding-right: 50px;"><%= percentage_debit.toFixed(2) %>% Since Last Month</li>
 									<i class="fas fa-bell"></i>
 								</ul>
 							</div>
@@ -167,8 +185,8 @@
                             </div>
                             <div class="card-body">
 								<ul>
-									<li class="card-text" style="font-size:xx-large;"><b>72,000.87N</b></li>
-									<li class="card-text" style=" display: inline; padding-right: 50px;">+10.20% Since Last Month</li>
+									<li class="card-text" style="font-size:xx-large;"><b><%= credit.toLocaleString() %>N</b></li>
+									<li class="card-text" style=" display: inline; padding-right: 50px;"><%= percentage_credit.toFixed(2) %>% Since Last Month</li>
 									<i class="fas fa-bell"></i>
 								</ul>
 							</div>
