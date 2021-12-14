@@ -15,7 +15,7 @@ require('dotenv').config();
 const dbURI = 'mongodb+srv://Salem:Vybranium@test.oepe0.mongodb.net/Vybe?retryWrites=true&w=majority';
 
 mongoose.connect( dbURI,  { useNewUrlParser: true, useUnifiedTopology: true })
-    .then((result) => app.listen(3000))
+    .then((result) => app.listen(process.env.PORT || 5000))
     .catch((err) => console.log(err));
 
 
@@ -39,7 +39,7 @@ app.get('/dashboard', requireAuth, requireMonoReauthToken, controllers.dashboard
 
 app.post('/dashboard', controllers.dashboardPost);
 app.get('/balances', controllers.balances, (req, res) => res.render('balances'));
-app.get('/transaction', controllers.alltransactions, (req, res) => res.render('transaction'));
+app.get('/transaction', requireAuth, requireMonoReauthToken, controllers.alltransactions, (req, res) => res.render('transaction'));
 app.get('/budget', controllers.balances, (req, res) => res.render('budget'));
 
 app.use(authRoutes);
